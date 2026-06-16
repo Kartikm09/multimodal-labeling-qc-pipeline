@@ -1,0 +1,6 @@
+asset_id,modality,label,confidence,reviewer_notes
+clip_001,video,correct_workflow,0.92,Export flow is accurate and includes verification.
+clip_002,video,missing_step,0.61,Needs final playback review.
+image_001,image,acceptable,0.88,Visual quality label is consistent.
+ui_001,ui,,0.55,
+ui_001,ui,incorrect_navigation,0.73,Second reviewer found a navigation issue.

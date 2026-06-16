@@ -1,0 +1,9 @@
+[project]
+name = "multimodal-labeling-qc-pipeline"
+version = "0.1.0"
+description = "Quality-control pipeline for multimodal AI annotation rows"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

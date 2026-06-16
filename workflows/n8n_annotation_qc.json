@@ -1,0 +1,39 @@
+{
+  "name": "Annotation QC Blueprint",
+  "nodes": [
+    {
+      "name": "Intake Annotation Rows",
+      "type": "manualTrigger",
+      "position": [0, 0]
+    },
+    {
+      "name": "Run QC Script",
+      "type": "executeCommand",
+      "position": [240, 0],
+      "parameters": {
+        "command": "python -m qc_pipeline.qc examples/annotations.csv"
+      }
+    },
+    {
+      "name": "Route Low Confidence Rows",
+      "type": "if",
+      "position": [480, 0],
+      "parameters": {
+        "condition": "contains output low-confidence"
+      }
+    },
+    {
+      "name": "Reviewer Summary",
+      "type": "set",
+      "position": [720, 0],
+      "parameters": {
+        "summary": "Prepare reviewer packet with low-confidence, disagreement, and missing-note issues."
+      }
+    }
+  ],
+  "connections": {
+    "Intake Annotation Rows": ["Run QC Script"],
+    "Run QC Script": ["Route Low Confidence Rows"],
+    "Route Low Confidence Rows": ["Reviewer Summary"]
+  }
+}
