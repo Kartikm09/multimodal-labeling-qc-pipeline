@@ -1,0 +1,30 @@
+name: Verify local synthetic review
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pip==26.2.1
+      - run: python -m pip install -r requirements-media.txt
+      - run: make verify
+      - run: PYTHONPATH=src python -m qc_pipeline.qc examples/annotations.csv
+  browser:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.61.1-noble
+    steps:
+      - uses: actions/checkout@v7
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: chromium-linux-captures
+          path: reports/ui-chromium-linux-*.png
