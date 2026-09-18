@@ -1,0 +1,76 @@
+{
+  "classification": "simulated reviewer calibration",
+  "known_identical": {
+    "matching": "greedy descending IoU >= 0.1; exact action/actor/object; IDs break ties; one-to-one",
+    "matched": 6,
+    "false_positive": 0,
+    "false_negative": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "mean_boundary_error_seconds": 0.0,
+    "mean_temporal_iou": 1.0,
+    "matches": [
+      {
+        "truth_id": "e1",
+        "prediction_id": "e1",
+        "temporal_iou": 1.0,
+        "boundary_error_seconds": 0.0,
+        "outcome_agrees": true
+      },
+      {
+        "truth_id": "e2",
+        "prediction_id": "e2",
+        "temporal_iou": 1.0,
+        "boundary_error_seconds": 0.0,
+        "outcome_agrees": true
+      },
+      {
+        "truth_id": "e3",
+        "prediction_id": "e3",
+        "temporal_iou": 1.0,
+        "boundary_error_seconds": 0.0,
+        "outcome_agrees": true
+      },
+      {
+        "truth_id": "e4",
+        "prediction_id": "e4",
+        "temporal_iou": 1.0,
+        "boundary_error_seconds": 0.0,
+        "outcome_agrees": true
+      },
+      {
+        "truth_id": "e5",
+        "prediction_id": "e5",
+        "temporal_iou": 1.0,
+        "boundary_error_seconds": 0.0,
+        "outcome_agrees": true
+      },
+      {
+        "truth_id": "e6",
+        "prediction_id": "e6",
+        "temporal_iou": 1.0,
+        "boundary_error_seconds": 0.0,
+        "outcome_agrees": true
+      }
+    ]
+  },
+  "shifted_100ms": {
+    "matching": "greedy descending IoU >= 0.1; exact action/actor/object; IDs break ties; one-to-one",
+    "matched": 1,
+    "false_positive": 0,
+    "false_negative": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "mean_boundary_error_seconds": 0.1,
+    "mean_temporal_iou": 0.8181818181818182,
+    "matches": [
+      {
+        "truth_id": "e2",
+        "prediction_id": "e2",
+        "temporal_iou": 0.8181818181818182,
+        "boundary_error_seconds": 0.1,
+        "outcome_agrees": true
+      }
+    ]
+  }
+}
